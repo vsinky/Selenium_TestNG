@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suitemultibrowser" parallel="tests">
+ <!-- <test thread-count="5" name="Testmultibrowser">-->
+  
+<test name="TestFirefox">
+ <parameter name="browser" value="firefox"></parameter>
+
+    <classes>
+      <class name="com.qa.demotestng.MultipleBrowser"/>
+    </classes>
+  </test> <!-- Test1 -->
+
+<test name="TestChrome">
+ <parameter name="browser" value="chrome"></parameter>
+ <classes>
+      <class name="com.qa.demotestng.MultipleBrowser"/>
+ </classes>
+
+  </test> <!-- Testmultibrowser -->
+</suite> <!-- Suitemultibrowser -->
