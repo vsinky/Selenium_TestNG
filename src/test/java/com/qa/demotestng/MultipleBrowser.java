@@ -13,11 +13,15 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class MultipleBrowser {
 	static{
 		System.setProperty("webdriver.gecko.driver","C:\\Users\\Admin\\Downloads\\geckodriver-v0.31.0-win64\\geckodriver.exe");
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
-		}
+		WebDriverManager.chromedriver().setup();
+		WebDriverManager.firefoxdriver().setup();
+	}
 		WebDriver driver;
 		@Test
 		@Parameters({"browser"})

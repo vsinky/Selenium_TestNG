@@ -3,8 +3,11 @@ package com.qa.demotestng;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class GroupDemo {
 	WebDriver driver;
@@ -17,8 +20,9 @@ public class GroupDemo {
     	System.out.println("This is the starting point of the test");
     	//Initialize Chrome Driver
     	//driver.manage().timeouts().implicitlyWait(1,TimeUnit.SECONDS);
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
-
+//		System.setProperty("webdriver.chrome.driver","C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
+	
     	 driver = new ChromeDriver();
     	 driver.get("https://demoqa.com/");
     }
